@@ -1,0 +1,22 @@
+{
+  "name": "adopt-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js, jsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evelyn-ZYW/ADOPT-ME.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Evelyn-ZYW/ADOPT-ME/issues"
+  },
+  "homepage": "https://github.com/Evelyn-ZYW/ADOPT-ME#readme",
+  "devDependencies": {
+    "prettier": "^2.4.1"
+  }
+}
