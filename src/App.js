@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 const Pet = (props) => {
   return React.createElement("div", {}, [
     React.createElement("h2", {}, props.name),
@@ -8,7 +11,7 @@ const Pet = (props) => {
 
 const App = () => {
   return React.createElement("div", {}, [
-    // React.createElement("h1", {}, "Adopt me"),
+    React.createElement("h1", {}, "Adopt me"),
     // ...[1, 2, 3, 4].map(i => React.createElement('h2', {}, i)),
     React.createElement(Pet, {
       name: "Missing",
