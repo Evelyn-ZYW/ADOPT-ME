@@ -1,8 +1,9 @@
 // import React from "react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom";
-// import Pet from "./Pet";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import SearchParams from "./SearchParams";
+import Details from "./Details";
 
 // const App = () => {
 //   return React.createElement("div", {}, [
@@ -33,7 +34,14 @@ const App = () => {
       {/* <Pet name="Missing" animal="Cat" breed="Mixed" />
       <Pet name="Erpang" animal="Cat" breed="British Shorthair" />
       <Pet name="Gougou" animal="Dog" breed="Mixed" /> */}
-      <SearchParams />
+      <Router>
+        <Route path="/">
+          <SearchParams />
+        </Route>
+        <Route>
+          <Details path="/details/:id" />
+        </Route>
+      </Router>
     </div>
   );
 };
