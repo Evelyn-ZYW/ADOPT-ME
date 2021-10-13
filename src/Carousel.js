@@ -8,6 +8,11 @@ class Carousel extends Component {
   static defaultProps = {
     images: ["http://pets-images.dev-apis.com/pets/none.jpg"],
   };
+  handleIndexClick = (e) => {
+    this.setState({
+      active: +e.target.dataset.index,
+    });
+  };
   render() {
     //state is mutable, which means I can call setState and modify what active is. It is self-contained, which means it's always contained within the component itself. Props can be state of a parent component, and the only thing that can modify state is the component that contains it.
     const { active } = this.state;
@@ -18,9 +23,12 @@ class Carousel extends Component {
         <img src={images[active]} alt="animal" />
         <div className="carousel-smaller">
           {images.map((photo, index) => (
+            //eslint-disable-next-line
             <img
               key={photo}
               src={photo}
+              data-index={index}
+              onClick={this.handleIndexClick}
               className={index === active ? "active" : ""}
               alt="animal thumbnail"
             />
