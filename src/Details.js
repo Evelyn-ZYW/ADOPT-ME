@@ -2,10 +2,12 @@ import { Component } from "react";
 import { withRouter } from "react-router";
 
 class Details extends Component {
-  constructor() {
-    super();
-    this.state = { loading: true };
-  }
+  // constructor() {
+  //   super();
+  //   this.state = { loading: true };
+  // }
+  state = { loading: true };
+
   async componentDidMount() {
     //this is called when the component is rendered for the first time
     const res = await fetch(
