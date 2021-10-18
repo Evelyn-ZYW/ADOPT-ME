@@ -6,7 +6,8 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
-    "dev": "parcel src/index.html"
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
   },
   "author": "Brian Holt <btholt+citrv6@gmail.com>",
   "license": "Apache-2.0",
@@ -23,6 +24,7 @@
     "eslint-plugin-react": "7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "parcel": "1.12.3",
+    "parcel-bundler": "^1.12.3",
     "prettier": "2.2.1"
   },
   "dependencies": {
