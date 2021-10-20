@@ -136,6 +136,7 @@ header {
   color: #333;
   font-size: 60px;
   margin: 5px 0px;
+  word-wrap: break-word;
 }
 
 .details h2 {
@@ -145,20 +146,24 @@ header {
 
 .carousel {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  height: 400px;
+  min-height: 400px;
   margin-top: 8px;
 }
 
 .carousel > img {
   max-width: 45%;
   max-height: 400px;
-  object-fit: cover;
+  min-height: 400px;
+  object-fit: contain;
 }
 
 .carousel-smaller {
-  width: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .carousel-smaller > img {
@@ -298,13 +303,18 @@ header {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .carousel > img {
+    max-width: 90%;
+    max-height: 350px;
+    min-height: 350px;
+    object-fit: contain;
+  }
 }
 
 @media only screen and (max-width: 945px) {
   .search-params {
     width: 95%;
   }
-
   .search {
     width: 100%;
   }
@@ -323,6 +333,13 @@ header {
   .image-container {
     margin: 0 auto;
     float: none;
+  }
+
+  .carousel > img {
+    max-width: 90%;
+    max-height: 250px;
+    min-height: 250px;
+    object-fit: contain;
   }
   .carousel-smaller > img {
     width: 60px;
