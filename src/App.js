@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import SearchParams from "./SearchParams";
 import Details from "./Details";
 import ThemeContext from "./ThemeContext";
+import Results from "./Results";
 
 // const App = () => {
 //   return React.createElement("div", {}, [
@@ -43,6 +44,9 @@ const App = () => {
             </Link>
           </header>
           <Switch>
+            <Route path="/animals/:animal">
+              <Results />
+            </Route>
             <Route path="/details/:id">
               <Details />
             </Route>
