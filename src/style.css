@@ -152,11 +152,7 @@ header {
 }
 
 .carousel > img {
-  /* max-width: 45%; */
-  max-width: 400px;
-  min-width: 400px;
-  max-height: 400px;
-  min-height: 400px;
+  max-width: 45%;
   object-fit: cover;
 }
 
