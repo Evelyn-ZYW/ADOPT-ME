@@ -6,7 +6,7 @@ import ThemeContext from "./ThemeContext";
 
 const data = require("../public/data.json");
 
-const ANIMALS = ["bird", "dog", "rabbit", "reptile"];
+const ANIMALS = ["dog", "cat", "bird", "rabbit", "reptile"];
 
 const SearchParams = () => {
   // const [location, setLocation] = useState("");

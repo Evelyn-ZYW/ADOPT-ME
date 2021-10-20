@@ -5,7 +5,7 @@
 
 body {
   background-color: #81a69b;
-  background-image: url(http://pets-images.dev-apis.com/pets/wallpaperB.jpg);
+  background-image: url(https://i.ibb.co/smw4sZD/wallpaper.jpg);
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -74,6 +74,7 @@ body {
   height: 100px;
   float: left;
   margin: 0px 20px 0px 10px;
+  background-size: cover;
 }
 
 .pet h1 {
@@ -151,8 +152,12 @@ header {
 }
 
 .carousel > img {
-  max-width: 45%;
+  /* max-width: 45%; */
+  max-width: 400px;
+  min-width: 400px;
   max-height: 400px;
+  min-height: 400px;
+  object-fit: cover;
 }
 
 .carousel-smaller {
@@ -167,6 +172,7 @@ header {
   margin: 15px;
   cursor: pointer;
   border: 2px solid #333;
+  object-fit: cover;
 }
 
 .carousel-smaller > img.active {
