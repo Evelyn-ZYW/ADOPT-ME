@@ -1,41 +1,33 @@
 import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-// import useBreedList from "./useBreedList";
+import useBreedList from "./useBreedList";
 import Results from "./Results";
 import ThemeContext from "./ThemeContext";
 
-const data = require("../public/data.json");
+// const data = require("../public/data.json");
 
 const ANIMALS = ["dog", "cat", "bird", "rabbit", "reptile"];
 
 const SearchParams = () => {
-  // const [location, setLocation] = useState("");
   const [animal, setAnimal] = useState("");
-  // const [breed, setBreed] = useState("");
-  // const [pets, setPets] = useState([]);
-  const [pets, setPets] = useState(data);
-  // const [breeds] = useBreedList(animal);
+  const [location, setLocation] = useState("");
+  const [breed, setBreed] = useState("");
+  const [pets, setPets] = useState([]);
+  const [breeds] = useBreedList(animal);
   const [theme, setTheme] = useContext(ThemeContext);
-
-  // async function requestPets() {
-  //   const res = await fetch(
-  //     `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
-  //   );
-  //   const json = await res.json();
-  //   console.log(res);
-  //   setPets(json.pets);
-  // }
-
-  const requestPets = () => {
-    if (animal) {
-      let result = data.filter((pet) => pet.animal === animal);
-      setPets(result);
-    }
-  };
 
   useEffect(() => {
     requestPets();
   }, []);
+
+  async function requestPets() {
+    const res = await fetch(
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+    );
+    const json = await res.json();
+
+    setPets(json.pets);
+  }
 
   return (
     <div className="search-params">
@@ -45,15 +37,15 @@ const SearchParams = () => {
           requestPets();
         }}
       >
-        {/* <label htmlFor="location">
+        <label htmlFor="location">
           Location
           <input
             id="location"
             onChange={(e) => setLocation(e.target.value)}
             value={location}
-            placeholder="Location"
+            placeholder="e.g. NY"
           />
-        </label> */}
+        </label>
         <label htmlFor="animal">
           Animal
           <select
@@ -70,7 +62,7 @@ const SearchParams = () => {
             ))}
           </select>
         </label>
-        {/* <label htmlFor="breed">
+        <label htmlFor="breed">
           Breed
           <select
             id="breed"
@@ -85,7 +77,7 @@ const SearchParams = () => {
               </option>
             ))}
           </select>
-        </label> */}
+        </label>
         <label htmlFor="theme">
           Theme
           <select
